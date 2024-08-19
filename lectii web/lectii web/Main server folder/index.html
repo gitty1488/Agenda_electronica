@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>BoomBoomShakaTaka</title>
+    <script>
+
+        function pageload1()
+        {
+            document.getElementById("2").innerHTML = this.responseText;
+
+        }
+
+        function fun1()
+        {
+            let x = document.getElementById("1").value;
+            let req = new XMLHttpRequest();
+            req.onload = pageload1;
+            let url = '/cgi-bin/sah.py/?x=' + x;
+            req.open("GET", url);
+            req.send();
+        }
+
+    </script>
+</head>
+<body>
+<table border="2px">
+        <tr>
+            <td>
+            <p>Calculator</p>
+            <br>
+
+            <form action="/cgi-bin/testin.py">
+            
+                <p>Introduceti valorile:<br></p>
+                <input name="x">
+                <br><br>
+                <input name="y">
+                <input type="submit" value="Calculeaza">
+                <br><br><br>
+            </form>
+        </td>
+        </tr> 
+        <tr>
+            <td>
+            <br>
+            <p>Calculatorv3</p>
+            <br>
+
+            <form action="/cgi-bin/calc.py">
+
+                <p>Introduceti prima valoare:<br></p>
+                <input name="x">
+                <br>
+                <p>Introduceti operatia</p>
+                <input name="type_operation">
+                <br>
+                <p>Introduceti a doua valoare:</p>
+                <input name="y">
+                <br><br>
+                <input type="submit" value="Calculeaza">
+
+            </form>
+        </td>
+        </tr>
+        <tr>
+        <td>
+        <br>
+
+            <form action="/cgi-bin/1.py">
+
+            <p>Introduceti textul: </p>
+            <br><br>
+            <input name="inv">
+            <br>
+            <input type="submit" value="Inverseaza">
+            
+            </form>
+            <br><br>
+
+        </td>
+
+        </tr>   
+
+        <!--Sarcina 2-->
+        <tr>
+            <td>
+            <form action="/cgi-bin/2.py">
+
+                <p>Introduceti valoarea</p>
+                <br><br>
+                <input name="x">
+                <br>
+                <input type="submit" value="Executati">
+                <br>
+
+            </form>
+            <br>
+        </td>
+        </tr>
+
+        <tr>
+            <td>
+            <form action="/cgi-bin/3.py">
+
+                <p>Introduceti numere prin virgula:</p>
+                <br><br>
+                <input name="x">
+                <br>
+                <input type="submit" value="Executati">
+                <br>
+
+            </form>
+            <br>
+        </td>
+        </tr>
+</table>
+
+<iframe src="https://store.steampowered.com/widget/387990/" frameborder="0" width="646" height="190"></iframe>
+<br>
+<br>
+<br>
+
+<p>Introduceti marimea tablei de sah:</p>
+<p><input id="1" type="text"></p>
+<p><button onclick="fun1()">GO!</button></p>
+<p id="2"></p>
+
+</body>
+</html>
